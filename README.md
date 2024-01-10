@@ -19,7 +19,7 @@ $ ./hsh [arg1] [arg2]
 
 ```
 
-### Features of Shell 
+### Features of Shell
 
 *  Command Execution: The shell can execute both built-in-commands & external commands available in the system.
 *  Input Handling: The shell reads user input from the command line and processes it..
@@ -62,5 +62,5 @@ The shell supports the following built-in-commands:
 * `env`: print or display environment
 
 ### Acknowledgement
-This program was written and designed by [Fagbodun Adewale Iyanuoluwa](./https://github.com/Wale1202) and [Mathias Owa Martins](./https://github.com/montybasquiart). 
+This program was written and designed by [Fagbodun Adewale Iyanuoluwa](./https://github.com/Wale1202) and [Mathias Owa Martins](./https://github.com/montybasquiart).
 We are learners and constantly improving daily. Feel free to reach us if you encounter any questions.
