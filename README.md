@@ -62,5 +62,5 @@ The shell supports the following built-in-commands:
 * `env`: print or display environment
 
 ### Acknowledgement
-This program was written and designed by [Fagbodun Adewale Iyanuoluwa](./https://github.com/Wale1202) and [Mathias Owa Martins](./https://github.com/montybasquiart).
+This program was written and designed by [Fagbodun Adewale Iyanuoluwa](https://github.com/Wale1202) and [Mathias Owa Martins](https://github.com/montybasquiart).
 We are learners and constantly improving daily. Feel free to reach us if you encounter any questions.
