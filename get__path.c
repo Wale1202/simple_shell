@@ -1,21 +1,19 @@
 #include "main.h"
 
 /**
- * _getpath - a function that path  enviroment variable
- * @command: command
- * Return: Returns PATH for success, NULL for failer
+ * _getpath - a function that path environment variables
+ * @command: shell command
+ * Return: Returns PATH for success, NULL for failed
  */
 char *_getpath(char *command)
 {
-	char *full_cmd;
-	char *path_env;
-	char *directory;
-	int i = 0;
+	char *get_cmd, char *path_env, char *dir;
 	struct stat st;
+	int i = 0;
 
-	while (command[i])
+	while (command[j])
 	{
-		if (command[i] == '/')
+		if (command[j] == '/')
 		{
 			if (stat(command, &st) == 0)
 				return (strdup(command));
@@ -24,26 +22,27 @@ char *_getpath(char *command)
 		i++;
 	}
 	path_env = _getenv("PATH");
-
 	if (!path_env)
-		return (NULL);
-	directory = strtok(path_env, ":");
-
-	while (directory)
 	{
-		full_cmd = malloc(strlen(directory) + strlen(command) + 2);
-		if (full_cmd)
+		return (NULL);
+	dir = strtok(path_env, ":");
+	}
+
+	while (dir)
+	{
+		get_cmd = malloc(strlen(dir) + strlen(command) + 2);
+		if (get_cmd)
 		{
-			strcpy(full_cmd, directory);
-			strcat(full_cmd, "/");
-			strcat(full_cmd, command);
-			if (stat(full_cmd, &st) == 0)
+			strcpy(get_cmd, dir);
+			strcat(get_cmd, "/");
+			strcat(get_cmd, command);
+			if (stat(get_cmd, &st) == 0)
 			{
 				free(path_env);
-				return (full_cmd);
+				return (get_cmd);
 			}
-			free(full_cmd), full_cmd = NULL;
-			directory = strtok(NULL, ":");
+			free(get_cmd), get_cmd = NULL;
+			dir = strtok(NULL, ":");
 		}
 	}
 	free(path_env);
