@@ -1,13 +1,15 @@
 #include "main.h"
 
 /**
- * _getpath - a function that path environment variable
+ * _getpath - a function that checks path environment variable
  * @command: command
- * Return: Returns PATH for success, NULL for failer
+ * Return: Returns PATH for success, NULL for failed
  */
 char *_getpath(char *command)
 {
-	char *full_cmd, char *path_env, char *directory;
+	char *full_cmd;
+	char *path_env;
+	char *directory;
 	int i = 0;
 	struct stat st;
 
