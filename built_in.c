@@ -7,18 +7,18 @@
  */
 int check_builtin(char *command)
 {
-	int k = 0;
-	char *buitinss[] = {
+	int i = 0;
+	char *buitins[] = {
 		"exit", "env", "setenv", "cd", NULL
 	};
 
-	while (buitinss[k])
+	while (buitins[i])
 	{
-		if (strcmp(command, buitinss[k]) == 0)
+		if (strcmp(command, buitins[i]) == 0)
 		{
 			return (1);
 		}
-		k++;
+		i++;
 	}
 	return (0);
 }
@@ -43,23 +43,23 @@ void handle_builtin(char **command, char **argv, int *status, int idx)
 }
 
 /**
- * handle_exit - a function handling exit for the shell
+ * handle_exit - a function handling exit
  * @command: Argument count
  * @argv: Argument vector
- * @status: status for the shell
+ * @status: status
  * @idx: index
- * Return: Returns exit conditions for the shell
+ * Return: Returns exit conditions
  */
 void handle_exit(char **command, char **argv, int *status, int idx)
 {
-	int exit_values = (*status);
+	int exit_value = (*status);
 	char *index, mssg[] = ": exit: Illegal number: ";
 
 	if (command[1])
 	{
 		if (is_positive(command[1]))
 		{
-			exit_values = _atoi(command[1]);
+			exit_value = _atoi(command[1]);
 		}
 		else
 		{
@@ -76,24 +76,24 @@ void handle_exit(char **command, char **argv, int *status, int idx)
 			return;
 		}
 	}
-		arrayfree(command);
-		exit(exit_values);
+	arrayfree(command);
+	exit(exit_value);
 }
 
 /**
- * print_env - a function that display enviroments for the shell
- * @command: command for the shell
- * @status: status of the shell
- * Return: Returns Variables for the enviroment
+ * print_env - a function that display enviroments
+ * @command: command
+ * @status: status
+ * Return: Returns enviroment variables
  */
 void print_env(char **command, int *status)
 {
-		int k;
-		(void) status;
+	int i;
+	(void) status;
 
-	for (k = 0; environ[k]; k++)
+	for (i = 0; environ[i]; i++)
 	{
-		write(STDOUT_FILENO, environ[k], strlen(environ[k]));
+		write(STDOUT_FILENO, environ[i], strlen(environ[i]));
 		write(STDOUT_FILENO, "\n", 1);
 	}
 	arrayfree(command);
