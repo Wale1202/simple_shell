@@ -82,8 +82,8 @@ void handle_exit(char **command, char **argv, int *status, int idx)
 
 /**
  * print_env - a function that display enviroments
- * @command: command
- * @status: status
+ * @command: command of shell
+ * @status: status of shell
  * Return: Returns enviroment variables
  */
 void print_env(char **command, int *status)
