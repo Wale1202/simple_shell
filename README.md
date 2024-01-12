@@ -151,7 +151,7 @@ Once the program is compiled you will need to execute the shell with the followi
 
 **Non-interactive mode**:
 
-    example@ubuntu:~/simple_shell$ echo "command" | ./hsh
+    demo@ubuntu:~/simple_shell$ echo "command" | ./hsh
 
 ## General Use Examples
 
